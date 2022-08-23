@@ -1,0 +1,10 @@
+name: YoutubeDownloader 
+on:
+  push:
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check module installs
+        shell: pwsh
+        run: Import-Module -Name YoutubeDownloader
