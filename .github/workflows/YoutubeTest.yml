@@ -17,4 +17,6 @@ jobs:
         run: |
           Import-Module ./YoutubeDownloader/YoutubeDownloader.psd1
           Save-YoutubeVideo -URL "https://www.youtube.com/watch?v=0EqSXDwTq6U" -Path /tmp/
-          Gci -Path /tmp/ -Filter *.mp4 | select -expand Name
+          $video = Get-ChildItem -Path /tmp/ -Filter *.mp4 | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          $video.FullName | Should -Be "/tmp/Charlie bit my finger! ORIGINAL"
+          $video.Length | Should -BeGreaterThan 0
