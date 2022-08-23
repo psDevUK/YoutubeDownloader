@@ -15,6 +15,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Check module imports into Linux
         run: |
-          Import-Module ./YoutubeDownloader/YoutubeDownloader.psd1;
+          Import-Module ./YoutubeDownloader/YoutubeDownloader.psd1
           Save-YoutubeVideo -URL "https://www.youtube.com/watch?v=0EqSXDwTq6U" -Path /tmp/
-          Gci -Path /tmp -Filter *.mp4 | select -expand Name
+          Gci -Path /tmp/ -Filter *.mp4 | select -expand Name
