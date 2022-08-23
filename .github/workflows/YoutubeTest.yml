@@ -7,4 +7,4 @@ jobs:
     steps:
       - name: Check module installs
         shell: pwsh
-        run: gci #Import-Module ./YoutubeDownloader/YoutubeDownloader/YoutubeDownloader.psd1
+        run: Import-Module ./YoutubeDownloader/YoutubeDownloader.psd1
