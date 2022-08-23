@@ -7,4 +7,4 @@ jobs:
     steps:
       - name: Check module installs
         shell: pwsh
-        run: Import-Module -Name YoutubeDownloader
+        run: Install-Module -Name YoutubeDownloader; Import-Module YoutubeDownloader
