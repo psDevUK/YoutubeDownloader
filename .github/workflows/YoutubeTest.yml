@@ -1,10 +1,17 @@
 name: YoutubeDownloader 
 on:
   push:
+    branches:
+      - main
+defaults:
+  run:
+    shell: pwsh
+
 jobs:
-  first-job:
+  Import-Job:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check module installs
-        shell: pwsh
+      - uses: actions/checkout@v3
+      - name: Check module imports into Linux
         run: Import-Module ./YoutubeDownloader/YoutubeDownloader.psd1
