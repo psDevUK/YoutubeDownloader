@@ -1,6 +1,6 @@
 Describe "Integration Tests" -Tag "IntegrationTests" {
     BeforeAll {
-          Import-Module ../YoutubeDownloader/YoutubeDownloader.psd1
+          Import-Module ../YoutubeDownloader.psd1
     }
     Context "The command works"
     It "returns the expected values" {
