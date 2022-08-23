@@ -13,10 +13,5 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Check module imports into Linux
-        run: |
-          Import-Module ./YoutubeDownloader/YoutubeDownloader.psd1
-          Save-YoutubeVideo -URL "https://www.youtube.com/watch?v=0EqSXDwTq6U" -Path /tmp/
-          $video = Get-ChildItem -Path /tmp/ -Filter *.mp4 | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-          $video.FullName | Should -Be "/tmp/Charlie bit my finger! ORIGINAL.mp4"
-          $video.Length | Should -BeGreaterThan 0
+      - name: Run PowerShell tests
+        run: Invoke-Pester ./tests/Integration.Tests.ps1 -Output Detailed -PassThru
