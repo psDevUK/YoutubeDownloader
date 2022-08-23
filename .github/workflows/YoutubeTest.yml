@@ -1,17 +1,15 @@
 name: YoutubeDownloader 
 on:
   push:
-    branches:
-      - main
 defaults:
   run:
     shell: pwsh
 
 jobs:
-  Import-Job:
+  Run-Tests:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-      - name: Run PowerShell tests
-        run: Invoke-Pester ./.tests/Integration.Tests.ps1 -Output Detailed -PassThru -EA Stop
+      - name: 🧪 Run PowerShell tests
+        run: Invoke-Pester ./.tests/Integration.Tests.ps1 -Output Detailed -PassThru -ErrorAction Stop
