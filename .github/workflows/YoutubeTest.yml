@@ -14,4 +14,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run PowerShell tests
-        run: Invoke-Pester ../.tests/Integration.Tests.ps1 -Output Detailed -PassThru
+        run: Invoke-Pester ../.tests/Integration.Tests.ps1 -Output Detailed -PassThru -EA Stop
