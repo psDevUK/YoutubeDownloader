@@ -14,4 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Check module imports into Linux
-        run: Import-Module ./YoutubeDownloader/YoutubeDownloader.psd1
+        run: |
+          Import-Module ./YoutubeDownloader/YoutubeDownloader.psd1;
+          Save-YoutubeVideo -URL "https://www.youtube.com/watch?v=c9m7ZdSwgkQ" -Path /tmp
