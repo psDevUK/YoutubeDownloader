@@ -16,4 +16,4 @@ jobs:
       - name: Check module imports into Linux
         run: |
           Import-Module ./YoutubeDownloader/YoutubeDownloader.psd1;
-          Save-YoutubeVideo -URL "https://www.youtube.com/watch?v=c9m7ZdSwgkQ" -Path /tmp/
+          Save-YoutubeVideo -URL "https://www.youtube.com/watch?v=0EqSXDwTq6U" -Path /tmp/
